@@ -18,11 +18,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.ColorUtils
+import com.johnlai.androidcleanarchitecturesample.core.util.TestTags
 import com.johnlai.androidcleanarchitecturesample.features.note.domain.model.Note
 import com.johnlai.androidcleanarchitecturesample.ui.theme.BabyBlue
 
@@ -36,6 +38,7 @@ fun NoteItem(
 ) {
     Box(
         modifier = modifier
+            .testTag(TestTags.NOTE_ITEM)
     ) {
         Canvas(modifier = Modifier.matchParentSize()) {
             val clipPath = Path().apply {
