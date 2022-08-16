@@ -117,3 +117,9 @@ dependencies {
 kapt {
     correctErrorTypes true
 }
+
+tasks.whenTaskAdded { task ->
+    if (task.name == "assembleDebug" || task.name == "assembleRelease") {
+        task.dependsOn "test", "connectedAndroidTest"
+    }
+}
